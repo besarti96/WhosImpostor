@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
 function App() {
+  const [message, setMessage] = useState("");
+
+  // Diese Funktion ruft den Backend-Endpunkt auf
+  const handleFetch = () => {
+    fetch('http://localhost:3000/')  // ruft das einfache Endpoint ab, das "Backend is running." zurückgibt
+      .then(response => response.text())
+      .then(data => setMessage(data))
+      .catch(error => setMessage("Error: " + error));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ textAlign: "center", marginTop: "50px" }}>
+      <h1>Who Is Impostor</h1>
+      <button onClick={handleFetch}>Test Backend</button>
+      {message && <p>{message}</p>}
     </div>
   );
 }
