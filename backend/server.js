@@ -48,6 +48,43 @@ app.post('/join-room', (req, res) => {
     res.json({ message: "Erfolgreich beigetreten", players: rooms[roomCode].players });
 });
 
+// POST /start-game: Startet das Spiel, weist einen zufälligen Impostor zu und verteilt das Thema an alle anderen Spieler
+app.post('/start-game', (req, res) => {
+    const { roomCode, theme } = req.body;
+    
+    // Überprüfen, ob der Raum existiert
+    if (!rooms[roomCode]) {
+        return res.status(404).json({ error: "Raum nicht gefunden" });
+    }
+    
+    const players = rooms[roomCode].players;
+    // Für einen sinnvollen Spielverlauf sollten mindestens 3 Spieler beitreten
+    if (players.length < 3) {
+        return res.status(400).json({ error: "Es werden mindestens 3 Spieler benötigt, um das Spiel zu starten." });
+    }
+    
+    // Wähle zufällig einen Impostor
+    const impostorIndex = Math.floor(Math.random() * players.length);
+    
+    // Erzeuge ein Rollen-Array, das für jeden Spieler seine Rolle enthält:
+    // - Der ausgewählte Impostor erhält nur "impostor" als Rolle.
+    // - Alle übrigen erhalten "player" und das gewählte Theme.
+    const roles = players.map((player, index) => {
+        if (index === impostorIndex) {
+            return { player, role: 'impostor' };
+        } else {
+            return { player, role: 'player', theme: theme };
+        }
+    });
+    
+    // Speichere die Rollenzuweisung im Raum (optional für spätere Logik)
+    rooms[roomCode].roles = roles;
+    
+    // ACHTUNG: In einem echten Spiel sollte die Information über die Rollen (vor allem der Impostor-Status)
+    // geheim bleiben und nur individuell an die jeweiligen Spieler gesendet werden.
+    // Hier senden wir alle Rollen als Demonstration zurück.
+    res.json({ message: "Spiel gestartet", roles });
+});
 
 
 
