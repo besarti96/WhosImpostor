@@ -76,6 +76,74 @@ app.post('/start-game', (req, res) => {
             return { player, role: 'player', theme: theme };
         }
     });
+
+    // POST /buzz: Startet die Abstimmungsphase, indem Votes im Raum initialisiert werden
+app.post('/buzz', (req, res) => {
+    const { roomCode } = req.body;
+
+    if (!rooms[roomCode]) {
+        return res.status(404).json({ error: "Raum nicht gefunden" });
+    }
+
+    // Initialisiere einen leeren Votes-Container im Raum
+    rooms[roomCode].votes = {};
+    res.json({ message: "Voting phase started. Please submit your votes using the /vote endpoint." });
+});
+
+// POST /vote: Ein Spieler gibt ab, wen er verdächtigt
+app.post('/vote', (req, res) => {
+    const { roomCode, voterName, suspectName } = req.body;
+
+    if (!rooms[roomCode]) {
+        return res.status(404).json({ error: "Raum nicht gefunden" });
+    }
+
+    // Überprüfen, ob die Voting-Phase gestartet wurde
+    if (!rooms[roomCode].votes) {
+        return res.status(400).json({ error: "Voting phase has not started. Please buzz first." });
+    }
+
+    // Jeder Spieler darf einmal abstimmen; speichere den Vote
+    rooms[roomCode].votes[voterName] = suspectName;
+    res.json({ message: `${voterName} voted for ${suspectName}` });
+});
+
+// POST /evaluate-votes: Wertet die abgestimmten Stimmen aus und ermittelt den Kandidaten mit den meisten Votes
+app.post('/evaluate-votes', (req, res) => {
+    const { roomCode } = req.body;
+
+    if (!rooms[roomCode]) {
+        return res.status(404).json({ error: "Raum nicht gefunden" });
+    }
+
+    if (!rooms[roomCode].votes) {
+        return res.status(400).json({ error: "Voting phase has not started" });
+    }
+
+    const votes = rooms[roomCode].votes;
+    const voteCounts = {};
+
+    // Zähle die Stimmen für jeden verdächtigten Spieler
+    for (const voter in votes) {
+        const suspect = votes[voter];
+        voteCounts[suspect] = (voteCounts[suspect] || 0) + 1;
+    }
+
+    // Ermittele den Kandidaten mit den meisten Stimmen
+    let maxVotes = 0;
+    let candidate = null;
+    for (const suspect in voteCounts) {
+        if (voteCounts[suspect] > maxVotes) {
+            maxVotes = voteCounts[suspect];
+            candidate = suspect;
+        }
+    }
+
+    // Hier könnte weitere Logik implementiert werden:
+    // z. B. ob der ausgewählte Kandidat auch der Impostor ist, oder ob es Unentschieden gibt.
+    res.json({ message: "Voting evaluation complete", candidate, voteCounts });
+});
+
     
     // Speichere die Rollenzuweisung im Raum (optional für spätere Logik)
     rooms[roomCode].roles = roles;
