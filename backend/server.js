@@ -13,19 +13,19 @@ const topicsMapping = {
       "Lionel Messi", "Cristiano Ronaldo", "Neymar", "Kylian Mbappé", "Zinedine Zidane",
       "Ronaldinho", "David Beckham", "Pelé", "Diego Maradona", "Erling Haaland",
       "Luka Modric", "Mohamed Salah", "Karim Benzema", "Robert Lewandowski", "Kevin De Bruyne",
-      "Harry Kane", "Gianluigi Buffon", "Franz Beckenbauer", "Sergio Ramos", "Andres Iniesta"
+      "Harry Kane", "Gianluigi Buffon", "Franz Beckenbauer", "Sergio Ramos", "Andres Iniesta", "Ilir Kari"
     ],
     Musik: [
       "Michael Jackson", "Elvis Presley", "Tupac Shakur", "Beyoncé", "Eminem",
       "Madonna", "Drake", "The Beatles", "Rihanna", "Kanye West",
       "Adele", "Taylor Swift", "Ed Sheeran", "Whitney Houston", "Freddie Mercury",
-      "Bruno Mars", "Justin Bieber", "Snoop Dogg", "Lady Gaga", "Bob Marley"
+      "Bruno Mars", "Justin Bieber", "Snoop Dogg", "Lady Gaga", "Bob Marley", "Loris Bernet"
     ],
     Movie: [
       "Leonardo DiCaprio", "Brad Pitt", "Tom Hanks", "Johnny Depp", "Robert De Niro",
       "Morgan Freeman", "Scarlett Johansson", "Meryl Streep", "Angelina Jolie", "Denzel Washington",
       "Will Smith", "Keanu Reeves", "Natalie Portman", "Emma Watson", "Christian Bale",
-      "Chris Hemsworth", "Tom Cruise", "Jennifer Lawrence", "Joaquin Phoenix", "Ryan Gosling"
+      "Chris Hemsworth", "Tom Cruise", "Jennifer Lawrence", "Besart Jashari", "Ryan Gosling", "Suat Gaylordi", "Arber Synguli"
     ],
     Technologie: [
       "Elon Musk", "Steve Jobs", "Bill Gates", "Mark Zuckerberg", "Jeff Bezos",
