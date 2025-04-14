@@ -65,7 +65,7 @@ const GamePage = () => {
   return (
     <Container maxWidth="md" style={{ marginTop: "40px", textAlign: "center" }}>
       <Typography variant="h3" gutterBottom style={{ fontWeight: "bold", letterSpacing: "2px" }}>
-        🎯 Gesuchtes Thema: {genre}
+        🎯 Gesuchtes Wort: {genre}
       </Typography>
 
       {loading ? (

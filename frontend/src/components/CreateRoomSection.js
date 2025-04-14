@@ -11,7 +11,7 @@ const CreateRoomSection = () => {
   const [selectedGenre, setSelectedGenre] = useState("");
   const [creatorName, setCreatorName] = useState("");
 
-  const genres = ["Fussball", "Fighter", "Musik", "Movie", "Technologie"];
+  const genres = ["Fussball", "Fighters", "Musik", "Movie", "Technologie"];
 
   // Ruft den Endpunkt zur Raumerstellung auf
   const handleCreateRoom = async () => {

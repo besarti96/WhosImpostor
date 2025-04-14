@@ -15,6 +15,12 @@ const topicsMapping = {
       "Luka Modric", "Mohamed Salah", "Karim Benzema", "Robert Lewandowski", "Kevin De Bruyne",
       "Harry Kane", "Gianluigi Buffon", "Franz Beckenbauer", "Sergio Ramos", "Andres Iniesta", "Ilir Kari"
     ],
+    Fighters: [
+        "Muhammad Ali", "Mike Tyson", "Jon Jones", "Conor McGregor", "Floyd Mayweather Jr.", "Manny Pacquiao", 
+        "Khabib Nurmagomedov", "Anderson Silva", "Ronda Rousey", "Bruce Lee", "Sony Liston", "Canelo Álvarez",    
+        "Tyson Fury", "Anthony Joshua", "Chuck Noris"          
+      ],
+      
     Musik: [
       "Michael Jackson", "Elvis Presley", "Tupac Shakur", "Beyoncé", "Eminem",
       "Madonna", "Drake", "The Beatles", "Rihanna", "Kanye West",
@@ -32,12 +38,7 @@ const topicsMapping = {
       "Larry Page", "Sergey Brin", "Tim Berners-Lee", "Satya Nadella", "Sundar Pichai",
       "Linus Torvalds", "Ada Lovelace", "Alan Turing", "Dennis Ritchie", "James Gosling",
       "Guido van Rossum", "Grace Hopper", "Jack Dorsey", "Susan Wojcicki", "Kevin Systrom"
-    ],
-    Fighter: [
-        "Muhammad Ali", "Mike Tyson", "Jon Jones", "Conor McGregor", "Floyd Mayweather Jr.", "Manny Pacquiao", 
-        "Khabib Nurmagomedov", "Anderson Silva", "Ronda Rousey", "Bruce Lee", "Sony Liston", "Canelo Álvarez",    
-        "Tyson Fury", "Anthony Joshua", "Chuck Noris"          
-      ]
+    ]
   };
   
 
