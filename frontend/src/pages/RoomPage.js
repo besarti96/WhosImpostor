@@ -187,7 +187,7 @@ const RoomPage = () => {
       {myRoleInfo.role === 'impostor' ? "Du bist der Impostor!" : "Du bist Player!"}
     </Typography>
     <Typography variant="h4" style={{ marginTop: "20px" }}>
-      Genre: {roomGenre}
+      Thema: {roomGenre}
     </Typography>
     
     <Button
