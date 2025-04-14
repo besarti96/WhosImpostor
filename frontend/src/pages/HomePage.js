@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <Container maxWidth="sm" style={{ marginTop: "50px", textAlign: "center", padding: "20px" }}>
       <Typography variant="h4" gutterBottom>
-        Who Is Impostor
+        Who Is Neger-Jude
       </Typography>
       <Box mb={4}>
         <CreateRoomSection />

@@ -82,10 +82,10 @@ const GamePage = () => {
       ) : role === "impostor" ? (
         <Box mt={3}>
           <Typography variant="h3" color="error" gutterBottom style={{ fontWeight: "bold" }}>
-            🚨 Du bist der Impostor!
+            🚨 Du bist der Neger-Jude!
           </Typography>
           <Typography variant="body1" style={{ marginTop: "10px", fontSize: "1.2rem" }}>
-            Du hast kein Thema erhalten. Täusche die anderen Spieler geschickt!
+            Du hast kein Thema erhalten. Täusche die anderen Spieler geschickt! Du verfickte Opfer du musch ez all verarsche Lüge wie en Jude und kill die andere wie en Neger
           </Typography>
         </Box>
       ) : topicDetails ? (
