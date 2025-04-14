@@ -32,7 +32,12 @@ const topicsMapping = {
       "Larry Page", "Sergey Brin", "Tim Berners-Lee", "Satya Nadella", "Sundar Pichai",
       "Linus Torvalds", "Ada Lovelace", "Alan Turing", "Dennis Ritchie", "James Gosling",
       "Guido van Rossum", "Grace Hopper", "Jack Dorsey", "Susan Wojcicki", "Kevin Systrom"
-    ]
+    ],
+    Fighter: [
+        "Muhammad Ali", "Mike Tyson", "Jon Jones", "Conor McGregor", "Floyd Mayweather Jr.", "Manny Pacquiao", 
+        "Khabib Nurmagomedov", "Anderson Silva", "Ronda Rousey", "Bruce Lee", "Sony Liston", "Canelo Álvarez",    
+        "Tyson Fury", "Anthony Joshua", "Chuck Noris"          
+      ]
   };
   
 
