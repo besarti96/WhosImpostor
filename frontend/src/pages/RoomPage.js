@@ -11,7 +11,7 @@ import { useLocation } from 'react-router-dom';
 import PlayerList from '../components/PlayerList';
 import { useNavigate } from 'react-router-dom';
 
-const backendUrl = "http://localhost:3000";
+const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:3000";
 
 const RoomPage = () => {
   const location = useLocation();
