@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Typography, Button, Grid, TextField } from '@mui/material';
 
-const backendUrl = "http://localhost:3000";
+const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:3000";
 
 const CreateRoomSection = () => {
   const navigate = useNavigate();
